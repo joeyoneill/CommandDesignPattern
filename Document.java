@@ -1,5 +1,3 @@
-package csce247.assignments.command;
-
 public class Document {
 	public String name; 
 	

@@ -1,4 +1,4 @@
-import java.util.HashMap; 
+import java.util.HashMap;
 
 /**
  * @author Charlie Coffin
@@ -8,35 +8,42 @@ import java.util.HashMap;
 public class InputHandler {
 
 	public HashMap<String, Command> commands;
-	
+
 	public InputHandler(Document document) {
 		commands = new HashMap<String, Command>();
-		
+
 		Command load = new LoadCommand(document);
 		Command save = new SaveCommand(document);
 		Command print = new PrintCommand(document);
 		Command spell = new SpellCommand(document);
-		
+
 		commands.put("load", load);
 		commands.put("save", save);
 		commands.put("print", print);
 		commands.put("spell", spell);
-	} 
-	
+	}
+
+	/**
+	 * When this method is called it checks for appropriate command and if command
+	 * is not found will return an error message
+	 * 
+	 * @param data is the users input, quit or goodbye to exit otherwise type of
+	 *             command
+	 */
 	public void inputEntered(String data) {
-		
-		if(data.equalsIgnoreCase("quit")){
+
+		if (data.equalsIgnoreCase("quit")) {
 			System.out.println("Goodbye");
 			System.exit(0);
 		}
-		
-		Command command = commands.get(data); 
-		
-		if(command == null) {
+
+		Command command = commands.get(data);
+
+		if (command == null) {
 			System.out.println("Sorry, we don't recognize that command");
 			return;
 		}
-		
+
 		else {
 			command.execute();
 		}

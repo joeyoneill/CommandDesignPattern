@@ -14,7 +14,7 @@ public class Document {
 		System.out.println("Document " + this.name + " is being saved");
 	}
 	
-	public void spellCheck() {
+	public void spell() {
 		System.out.println("Document " + this.name + " is being checked for spelling errors");
 	}
 	

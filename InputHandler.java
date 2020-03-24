@@ -15,12 +15,12 @@ public class InputHandler {
 		Command load = new LoadCommand(document);
 		Command save = new SaveCommand(document);
 		Command print = new PrintCommand(document);
-		Command spellCheck = new SpellCommand(document);
+		Command spell = new SpellCommand(document);
 		
 		commands.put("load", load);
 		commands.put("save", save);
 		commands.put("print", print);
-		commands.put("spell", spellCheck);
+		commands.put("spell", spell);
 	} 
 	
 	public void inputEntered(String data) {
